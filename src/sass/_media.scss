@@ -139,6 +139,12 @@
             font-size: 18px;
         }
     }
+    .carousel__inner {
+        width: 520px;
+        img {
+            width: 100%;
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -231,5 +237,12 @@
     .feed-form {
         width: 270px;
         padding-right: 40px;
+    }
+
+    .carousel__inner {
+        width: auto;
+        img {
+            width: 100%;
+        }
     }
 }
