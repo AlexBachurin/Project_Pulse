@@ -22,6 +22,16 @@
     .feed-form {
         margin-left: 40px;
     }
+    .catalog {
+        &-item {
+            &__newprice {
+                font-size: 19px;
+            }
+        }
+    }
+    .carousel {
+        padding-bottom: 120px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -59,7 +69,7 @@
     .advantages {
         &__item {
             width: 230px;
-            &:nth-child(1){
+            &:nth-child(1) {
                 padding-left: 15px;
             }
             &:nth-child(3) {
@@ -74,7 +84,14 @@
             margin-top: 40px;
         }
     }
-   
+    .catalog {
+        &__content {
+            justify-content: space-evenly;
+        }
+        &__tab {
+            width: 205px;
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -91,6 +108,11 @@
         }
         &__phone {
             font-size: 16px;
+        }
+    }
+    .button {
+        &_catalog {
+            width: 120px;
         }
     }
 
@@ -139,10 +161,38 @@
             font-size: 18px;
         }
     }
+    .carousel {
+        padding-bottom: 123px;
+    }
     .carousel__inner {
         width: 520px;
         img {
             width: 100%;
+        }
+    }
+    .catalog {
+        padding-bottom: 50px;
+        &__content {
+            justify-content: space-evenly;
+        }
+        &__tab {
+            width: 152px;
+            font-size: 15px;
+        }
+        &-item {
+            width: 275px;
+            &__content {
+                transform: translateX(-105%);
+                &_active {
+                    transform: translateX(0);
+                }
+            }
+            &__prevprice {
+                font-size: 13px;
+            }
+            &__newprice {
+                font-size: 18px;
+            }
         }
     }
 }
@@ -192,6 +242,10 @@
         &_submit {
             width: 233px;
         }
+        &_catalog {
+            width: 73px;
+            font-size: 12px;
+        }
     }
 
     .title {
@@ -238,11 +292,114 @@
         width: 270px;
         padding-right: 40px;
     }
-
+    .carousel {
+        padding-bottom: 80px;
+    }
     .carousel__inner {
         width: auto;
         img {
             width: 100%;
         }
     }
+    .catalog {
+        padding-bottom: 40px;
+        &__tabs {
+            margin-top: 50px;
+        }
+        &__tab {
+            font-size: 11px;
+            width: 85px;
+            transform: none;
+            div {
+                transform: none;
+            }
+            &:nth-child(3) {
+                line-height: 15px;
+                padding-top: 10px;
+            }
+        }
+        &__content {
+            flex-direction: column;
+        }
+        &-item {
+            width: 200px;
+            &__wrapper {
+                height: 316px;
+            }
+            &__content {
+                transform: translateX(-110%);
+                &_active {
+                    transform: translateX(0);
+                }
+            }
+            &__img {
+                height: 135px;
+            }
+            &__subtitle {
+                font-size: 14px;
+                
+            }
+            &__descr {
+                font-size: 13px;
+            }
+            &__link {
+                margin-top: 13px;
+            }
+            &__newprice {
+                font-size: 14px;
+            }
+            &__oldprice {
+                font-size: 12px;
+            }
+            &__list {
+                li {
+                    margin-bottom: 5px;
+                    font-size: 11px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .reviews {
+        &-item {
+            display: block;
+            &__img {
+                margin: 0 auto;
+            }
+            &__descr {
+                margin-top: 20px;
+                text-align: center;
+            }
+            &__text {
+                font-size: 15px;
+                padding: 0 10px;
+            }
+        }
+    }
 }
+
+@media only screen 
+and (min-device-width: 420px) 
+and (max-device-width: 575px) {
+    .catalog {
+        &__content {
+            flex-direction: row;
+        }
+        &__tab {
+            width: 100px;
+            &:nth-child(3) {
+                line-height: 30px;
+            }
+
+        }
+    }
+}  
+@media only screen 
+and (min-device-width: 900px) 
+and (max-device-width: 991px) {
+    .catalog {
+       &__content {
+           justify-content: space-between;
+       }
+    }
+}   
