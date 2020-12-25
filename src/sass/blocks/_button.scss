@@ -8,6 +8,9 @@
     font-weight: 500;
     text-transform: uppercase;
     color: #ffffff;
+    transition: 0.5s all;
+    position: relative;
+    z-index: 1;
     &_main {
         margin-top: 67px;
         width: 300px;
@@ -23,5 +26,47 @@
         width: 131px;
         height: 40px;
         font-size: 14px;
+    }       
+    &:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        background-color: #8c2020;
+        border-radius: 5px;
+         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5);
+        //  7px 7px 20px 0px rgba(0,0,0,.1),
+        //  4px 4px 5px 0px rgba(0,0,0,.1);
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        color: #fff;
+    }
+    &:hover:after {
+        left: 0;
+        width: 100%;
+     }
+    &:active {
+        top: 2px;
     }
 }
+
+// @keyframes bounce {
+//     0%, 20%, 60%, 100% {
+//       -webkit-transform: translateY(0);
+//       transform: translateY(0);
+//     }
+
+//     40% {
+//       -webkit-transform: translateY(-20px);
+//       transform: translateY(-20px);
+//     }
+
+//     80% {
+//       -webkit-transform: translateY(-10px);
+//       transform: translateY(-10px);
+//     }
+//   }
