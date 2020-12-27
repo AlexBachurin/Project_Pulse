@@ -2,8 +2,8 @@ $(document).ready(function () {
   $('.carousel__inner').slick({
     speed: 1200,
     adaptiveHeight: true,
-    prevArrow: '<button type="button" class="slick-prev"><img src="../icons/left_arrow.png"></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="../icons/right_arrow.png"></button>',
+    prevArrow: '<button type="button" class="slick-prev"><img src="icons/left_arrow.png"></button>',
+    nextArrow: '<button type="button" class="slick-next"><img src="icons/right_arrow.png"></button>',
     responsive: [
       {
         breakpoint: 992,
@@ -48,7 +48,7 @@ $('.catalog-item__back').each(function(i) {
     })
 })
 
-//modal
+//MODAL
 
 $('[data-modal="consultation"]').on('click', function() {
   $('.overlay, #consultation').fadeIn('slow');
@@ -56,6 +56,15 @@ $('[data-modal="consultation"]').on('click', function() {
 
 //закрыть модальное окно при клике на крестик
 $('.modal__close').on('click', function() {
+  // document.querySelector('#consultation form').reset(); //сброс формы
+  //скрываем надписи о ошибке при закрытии формы
+  document.querySelectorAll('label.error').forEach((item) => {
+    item.style.display = "none";
+  });
+  // меняем цвет обводки инпута на обычный
+  document.querySelectorAll('form input').forEach((item) => {
+    item.classList.remove('error');
+  })
   $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
 })
 
@@ -66,4 +75,69 @@ $('.button_catalog').each(function(i) {
     $('.overlay, #order').fadeIn('slow');
   })
 })
+
+//FORM VALIDATION
+
+
+function formValidate(formSelector) {
+  $(formSelector).validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      phone: "required",
+      email: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      name: {
+        required: "Пожалуйста, введите имя",
+        minlength: jQuery.validator.format("Введите как минимум {0} символа")
+      },
+      phone: "Пожалуйста, введите номер своего телефона",
+      email: {
+        required: "Пожалуйста, введите почтовый адрес",
+        email: "Правильный формат почты - name@domain.com"
+      }
+    },
+    // focusCleanup: true
+  });
+}
+
+formValidate('#consultation-main');
+formValidate('#consultation .feed-form');
+formValidate('#order .feed-form');
+
+//Masked input for phone
+
+$('input[name=phone]').mask("+7 (999) 999-99-99");
+
+//send form
+
+//send form
+
+$('form').submit(function(e) {
+  e.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: "mailer/smart.php",
+    data: $(this).serialize()
+  }).done(function() {
+    $(this).find("input").val(""); //очищаем инпут после отправки формы
+    $('#consultation, #order').fadeOut(); //при правильной отправке убираем форму и 
+    //подставляем благодарственное окно
+    $('.overlay , #thanks').fadeIn('slow');
+    //убираем благодарственное окно через 3 секунды
+    setTimeout(function () {
+      $('.overlay , #thanks').fadeOut();
+    }, 3000);
+
+    $('form').trigger('reset') //очищаем все формы
+  });
+  return false;
+});
+
 

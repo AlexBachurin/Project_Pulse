@@ -21,4 +21,13 @@
         margin-top: 25px;
     }
     
+    
+}
+
+.error {
+    border: 1px solid red;
+}
+label.error {
+    border: none;
+    color: red;
 }

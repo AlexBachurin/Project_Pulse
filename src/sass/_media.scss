@@ -424,6 +424,10 @@
             }
         }
     }
+    .modal__close {
+        right: -40px;
+        line-height: 14px;
+    }
 }
 @media only screen and (min-device-width: 900px) and (max-device-width: 991px) {
     .catalog {
