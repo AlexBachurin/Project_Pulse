@@ -35,6 +35,14 @@
     .carousel {
         padding-bottom: 120px;
     }
+    .pageUp {
+        right: -52px;
+    }
+    .reviews {
+        &__goToTop {
+            display: block;
+        }
+    }
 
 }
 
@@ -410,6 +418,7 @@
             line-height: 26px;
         }
     }
+    
 }
 
 @media only screen and (min-device-width: 420px) and (max-device-width: 575px) {

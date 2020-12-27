@@ -140,4 +140,22 @@ $('form').submit(function(e) {
   return false;
 });
 
+// pageup visibility
+
+$(window).scroll(function() {
+  //когда промотаем больше 1600px,то отображаем картинку скролла
+  //иначе скрываем его
+  if ($(this).scrollTop() > 1600) {
+    $('.pageUp').fadeIn();
+  } else {
+    $('.pageUp').fadeOut('fast');
+  }
+});
+
+// Smooth scroll
+$("a[href^='#']").click(function(){
+  const _href = $(this).attr("href");
+  $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+  return false;
+});
 
