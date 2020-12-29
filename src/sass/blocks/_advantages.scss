@@ -33,4 +33,10 @@
             }
         }
     }
+    &__icon {
+        &_animated {
+            animation: heartbeat 3s ease infinite;
+
+        }
+    }
 }

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulse</title>
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -15,7 +12,7 @@
     <section id="promo" class="promo">
         <div class="container">
             <header class="header">
-                <a href="#" class="header__logo">
+                <a href="#" class="header__logo animate__animated wow animate__bounceInLeft">
                     <img src="icons/main_logo.png" alt="logo">
                 </a>
                 <div class="header__official">
@@ -80,7 +77,7 @@
                     </div>
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/heart.png" alt="heart">
+                    <img src="icons/heart.png" alt="heart" class="advantages__icon_animated">
                     <div class="advantages__item_header">
                         Заботимся о здоровье</div>
                     <div class="advantages__item_descr">
@@ -120,9 +117,9 @@
                 минут
             </div>
             <form id="consultation-main" class="feed-form" action="#">
-                <input name="name"  type="text" placeholder="Ваше имя">
-                <input name="phone"   placeholder="Ваш телефон">
-                <input name="email"  type="email" placeholder="Ваш email">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш email">
                 <!-- 1 вариант кнопки отправки формы -->
                 <!-- <input type="submit" value="заказать кОНСУЛЬТАЦИЮ"> -->
                 <!-- 2 вариант кнопки отправки формы -->
@@ -135,7 +132,7 @@
             </form>
         </div>
     </section>
-    <section class="carousel">
+    <div class="carousel">
         <div class="container">
             <div class="carousel__inner">
                 <div>
@@ -149,7 +146,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <section id="catalog" class="catalog">
         <div class="container">
             <h2 class="title">Каталог пульсометров
@@ -293,7 +290,7 @@
                             </div>
                             <div class="catalog-item__descr">
                                 Улучшенная версия Polar FT1,<br>
-                                 имеющая следующие улучшения:
+                                имеющая следующие улучшения:
                             </div>
                             <a href="#" class="catalog-item__link">
                                 ПОДРОБНЕЕ
@@ -716,7 +713,7 @@
         <div class="container">
             <h2 class="title">отзывы клиентов
             </h2>
-            <div class="reviews-item">
+            <div class="reviews-item wow animate__animated animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s">
                 <div class="reviews-item__img">
                     <img src="img/review_1.jpg" alt="review">
                 </div>
@@ -747,7 +744,7 @@
                     </div>
                 </div>
             </div>
-            <div class="reviews-item">
+            <div class="reviews-item wow animate__animated animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0.5s">
                 <div class="reviews-item__img">
                     <img src="img/review_2.jpg" alt="review">
                 </div>
@@ -780,7 +777,7 @@
                     </div>
                 </div>
             </div>
-            <div class="reviews-item">
+            <div class="reviews-item wow animate__animated animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0.5s">
                 <div class="reviews-item__img">
                     <img src="img/review_3.jpg" alt="review">
                 </div>
@@ -859,9 +856,9 @@
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form feed-form_modalForm" action="#">
-                <input name="name"  type="text" placeholder="Ваше имя">
-                <input name="phone"   placeholder="Ваш телефон">
-                <input name="email"  type="email" placeholder="Ваш email">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш email">
                 <button class="button button_submit">
                     заказать
                     кОНСУЛЬТАЦИЮ
@@ -873,9 +870,9 @@
             <div class="modal__subtitle">Ваш заказ:</div>
             <div class="modal__descr">Пульсометр Polar FT1</div>
             <form class="feed-form feed-form_modalForm" action="#">
-                <input name="name"  type="text" placeholder="Ваше имя">
-                <input name="phone"   placeholder="Ваш телефон">
-                <input name="email"  type="email" placeholder="Ваш email">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш email">
                 <button class="button button_submit">
                     Купить
                 </button>
@@ -884,20 +881,21 @@
         <div class="modal modal_mini" id="thanks">
             <div class="modal__close">&times;</div>
             <div class="modal__subtitle">Спасибо за вашу заявку!</div>
-            <div class="modal__descr">Наш менеджер свяжется с вами 
+            <div class="modal__descr">Наш менеджер свяжется с вами
                 в ближайшее время!</div>
         </div>
     </div>
-    <a href="#promo" class="pageUp"><img src="icons/chevron-circle-up-solid.svg" alt="up" >
+    <a href="#promo" class="pageUp"><img src="icons/chevron-circle-up-solid.svg" alt="up">
     </a>
-    
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js">
+
+    <script  src="//code.jquery.com/jquery-1.11.0.min.js">
     </script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js">
+    <script  src="//code.jquery.com/jquery-migrate-1.2.1.min.js">
     </script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
