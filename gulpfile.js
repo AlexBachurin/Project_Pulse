@@ -86,5 +86,6 @@ gulp.task('images', function () {
 
 //создаем еще одну задачу для запуска одновременно остальных задач
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'images', 'mailer', 'icons'));
+gulp.task('build', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'images', 'mailer', 'icons'));
 
 
